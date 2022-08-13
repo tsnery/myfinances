@@ -16,6 +16,7 @@ import {
   StyleSheet,
   View,
 } from "react-native";
+import { StatusBar } from "expo-status-bar";
 
 SplashScreen.preventAutoHideAsync();
 
@@ -43,6 +44,7 @@ export default function App() {
   return (
     <ThemeProvider theme={theme}>
       <SafeAreaView onLayout={onLayoutRootView} style={styles.container}>
+        <StatusBar backgroundColor="dark" />
         <Dashboard />
       </SafeAreaView>
     </ThemeProvider>
