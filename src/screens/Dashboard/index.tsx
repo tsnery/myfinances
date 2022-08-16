@@ -1,4 +1,5 @@
 import React from "react";
+import { HighlightCard } from "../../components";
 import * as Styles from "./styles";
 
 export const Dashboard = () => {
@@ -16,6 +17,11 @@ export const Dashboard = () => {
           <Styles.Icon name="power" />
         </Styles.UserWrapper>
       </Styles.Header>
+      <Styles.ScrollCards>
+        <HighlightCard />
+        <HighlightCard />
+        <HighlightCard />
+      </Styles.ScrollCards>
     </Styles.Container>
   );
 };

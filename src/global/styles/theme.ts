@@ -10,6 +10,7 @@ export default {
     shape: '#ffffff',
     title: '#3635f5',
     text: '#969cb2',
+    text_dark: '#333',
     background: '#f0f2f5',
   },
   fonts: {
