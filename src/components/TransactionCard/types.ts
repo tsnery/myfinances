@@ -4,6 +4,7 @@ export type Category = {
 }
 
 export type TransactionProps = {
+  id: string
   type: 'positive' | 'negative'
   title: string
   amount: string
