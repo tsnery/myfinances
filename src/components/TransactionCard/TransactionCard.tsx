@@ -5,7 +5,10 @@ export function TransactionCard({ data }: TransactionCardProps) {
   return (
     <Styles.Container>
       <Styles.Title>{data.title}</Styles.Title>
-      <Styles.Amount>{data.amount}</Styles.Amount>
+      <Styles.Amount type={data.type}>
+        {data.type === "negative" && "- "}
+        {data.amount}
+      </Styles.Amount>
       <Styles.Footer>
         <Styles.Category>
           <Styles.Icon name={data.category.icon} />
