@@ -1,4 +1,4 @@
-import { Image } from "react-native";
+import { FlatList, Image } from "react-native";
 import { RFPercentage, RFValue } from "react-native-responsive-fontsize";
 import styled from "styled-components/native";
 import Feather from "@expo/vector-icons/Feather";
@@ -7,6 +7,8 @@ import Feather from "@expo/vector-icons/Feather";
 export const Container = styled.View`
   flex: 1;
   background-color: ${({ theme }) => theme.colors.background};
+
+  margin-bottom: 24px;
 `
 
 export const Title = styled.Text`
@@ -73,4 +75,22 @@ export const ScrollCards = styled.ScrollView.attrs({
 })`
   position: absolute;
   margin-top: ${RFPercentage(20)}px;
+`
+
+export const TransactionsContainer = styled.View`
+  flex: 1;
+  padding: 0 24px;
+
+  margin-top: ${RFPercentage(12)}px;
+`
+
+export const TransactionTitle = styled.Text`
+  font-size: ${RFValue(18)}px;
+  font-family: ${({ theme }) => theme.fonts.regular};
+
+  margin-bottom: 16px;
+`
+
+export const ScrollTransactions = styled(FlatList)`
+
 `

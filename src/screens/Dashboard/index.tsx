@@ -1,8 +1,52 @@
 import React from "react";
-import { HighlightCard } from "../../components";
+import { ListRenderItem, View } from "react-native";
+import {
+  HighlightCard,
+  TransactionCard,
+  TransactionProps,
+} from "../../components";
 import * as Styles from "./styles";
 
 export const Dashboard = () => {
+  const data: TransactionProps[] = [
+    {
+      id: "1",
+      title: "Desenvolvimento de site",
+      amount: "R$ 12.000,00",
+      date: "10/04/2022",
+      category: {
+        name: "Vendas",
+        icon: "dollar-sign",
+      },
+    },
+    {
+      id: "2",
+      title: "Desenvolvimento de site",
+      amount: "R$ 13.000,00",
+      date: "10/04/2022",
+      category: {
+        name: "Vendas",
+        icon: "dollar-sign",
+      },
+    },
+    {
+      id: "3",
+      title: "Desenvolvimento de site",
+      amount: "R$ 14.000,00",
+      date: "10/04/2022",
+      category: {
+        name: "Vendas",
+        icon: "dollar-sign",
+      },
+    },
+  ];
+
+  const renderItem: ListRenderItem<TransactionProps> = ({ item }) => (
+    <TransactionCard data={item} />
+  );
+
+  const itemSeparator = () => <View style={{ height: 16 }} />;
+
   return (
     <Styles.Container>
       <Styles.Header>
@@ -37,6 +81,16 @@ export const Dashboard = () => {
           lastTransaction="01 à 16 de abril"
         />
       </Styles.ScrollCards>
+      <Styles.TransactionsContainer>
+        <Styles.TransactionTitle>Listagem</Styles.TransactionTitle>
+        <Styles.ScrollTransactions
+          keyExtractor={(item) => item.id}
+          data={data}
+          renderItem={renderItem}
+          ItemSeparatorComponent={itemSeparator}
+          showsVerticalScrollIndicator={false}
+        />
+      </Styles.TransactionsContainer>
     </Styles.Container>
   );
 };
