@@ -87,11 +87,10 @@ export const Dashboard = () => {
       <Styles.TransactionsContainer>
         <Styles.TransactionTitle>Listagem</Styles.TransactionTitle>
         <Styles.ScrollTransactions
-          keyExtractor={(item) => item.id}
           data={data}
+          keyExtractor={(item) => item.id}
           renderItem={renderItem}
           ItemSeparatorComponent={itemSeparator}
-          showsVerticalScrollIndicator={false}
         />
       </Styles.TransactionsContainer>
     </Styles.Container>

@@ -2,6 +2,7 @@ import { FlatList, Image } from "react-native";
 import { RFPercentage, RFValue } from "react-native-responsive-fontsize";
 import styled from "styled-components/native";
 import Feather from "@expo/vector-icons/Feather";
+import { TransactionProps } from "../../components";
 
 
 export const Container = styled.View`
@@ -91,6 +92,9 @@ export const TransactionTitle = styled.Text`
   margin-bottom: 16px;
 `
 
-export const ScrollTransactions = styled(FlatList)`
-
-`
+export const ScrollTransactions = (styled(
+  FlatList as new () => FlatList<TransactionProps>
+).attrs(props => ({
+  showsVerticalScrollIndicator: false,
+  ...props
+}))`` as unknown) as typeof FlatList
